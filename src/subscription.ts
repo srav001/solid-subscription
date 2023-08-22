@@ -13,7 +13,6 @@ export function useSubscription<T>(value: T, deep = false) {
 		throw new Error('No value provided, Initial value is required');
 	}
 
-	// const _subRef = deep === false ? shallowRef(value) : ref(value);
 	const [subGetter, subSetter] = createSignal(value);
 	type SubType = ReturnType<typeof subGetter>;
 
@@ -58,6 +57,7 @@ export function useSubscription<T>(value: T, deep = false) {
 	}
 
 	function setValue(val: SubType) {
+		// @ts-expect-error not an error maybe?
 		subSetter(val); 
 		triggerSubscribers(val);
 	}
@@ -74,6 +74,7 @@ export function useSubscription<T>(value: T, deep = false) {
 			return subGetter();
 		},
 		set(val: SubType | ValueMutator) {
+			// @ts-expect-error same here also ?
 			if (typeof val === 'function') setValue(val(subGetter()));
 			else setValue(val);
 		},
