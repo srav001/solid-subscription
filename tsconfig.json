@@ -1,0 +1,27 @@
+{
+	"include": ["src/**/*.ts",  "demo/main.ts", "demo/main.ts"],
+	"exclude": ["node_modules"],
+	"references": [
+		{
+			"path": "./tsconfig.node.json"
+		}
+	],
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"]
+		},
+		"target": "ES2020",
+		"module": "ESNext",
+		"strict": true,
+		"jsx": "preserve",
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"isolatedModules": true,
+		"verbatimModuleSyntax": true,
+		"moduleResolution": "node",
+		"lib": ["ESNext", "ESNext.AsyncIterable", "DOM"]
+	},
+	"types": ["vue", "@types/node"],
+	"files": ["src/types/reset.d.ts"]
+}

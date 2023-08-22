@@ -1,0 +1,51 @@
+{
+	"name": "solid-subscription",
+	"version": "0.0.1",
+	"description": "An other way to use signals in solid-js",
+	"main": "./src/subscription.ts",
+	"scripts": {
+		"dev": "vite",
+		"preview": "vite preview",
+		"build-only": "vite build",
+		"type-check": "vue-tsc --noEmit",
+		"build": "pnpm type-check && pnpm build-only",
+		"pre-push": "pnpm format && pnpm lint && pnpm build",
+		"lint": "node -e 'require(\"./scripts\").lint()'",
+		"format": "node -e 'require(\"./scripts\").format()'",
+		"project-setup": "node -e 'require(\"./scripts\").projectSetup()'"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/srav001/solid-subscription.git"
+	},
+	"author": "",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/srav001/solid-subscription/issues"
+	},
+	"homepage": "https://github.com/srav001/solid-subscription#readme",
+	"type": "module",
+	"peerDependencies": {
+		"solid-js": ">=^1.7.0"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^17.4.4",
+		"@commitlint/config-conventional": "^17.4.4",
+		"@types/node": "^18.14.2",
+		"@total-typescript/ts-reset": "^0.3.7",
+		"@typescript-eslint/eslint-plugin": "^5.54.0",
+		"@typescript-eslint/parser": "^5.54.0",
+		"eslint": "^8.34.0",
+		"eslint-plugin-sonarjs": "^0.18.0",
+		"husky": "^8.0.3",
+		"prettier": "^2.8.4",
+		"solid-js": "^1.7.6",
+		"typescript": "^5.1.3",
+		"vite": "^4.3.9",
+		"vite-plugin-solid": "^2.7.0"
+	},
+	"engines": {
+		"node": ">=18.0.0",
+		"pnpm": ">=8.0.0"
+	}
+}
